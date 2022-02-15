@@ -1,6 +1,6 @@
 ## Configuration
 
-Configuration and monitoring are managed through MQTT and the `esp-garden/control` topic.
+Configuration is managed through MQTT and the `esp-garden/control` topic.
 
 Use the appropriate MQTT settings based on your MQTT broker setup
 
