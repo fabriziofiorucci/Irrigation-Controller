@@ -41,7 +41,7 @@ The Irrigation Controller can be powered by a power supply ranging from 12v to 2
 - provide +5v to power the Wemos D1 and main board
 - provide +9v to power the water valves
 
-<img src="./schematics/Schematic_Irrigation_controller_2021-12-28.svg"/>
+<img src="./schematics/Schematic_Irrigation_controller_2022-02-15.svg"/>
 
 ## Usage
 
