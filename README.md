@@ -2,11 +2,13 @@
 
 ## Description
 
-This is a Wemos D1-based irrigation controller that handles 4 water lines through bistable 9V water valves
-It supports and monitors one water flow sensor to monitor and measure water consumption
-MQTT is used for configuration and monitoring purposes. You will need to set up a MQTT broker (ie. mosquitto)
-Water lines configuration is persistently stored to the Wemos D1 EEPROM and is kept across restarts
-OTA updates are supported
+This is a Wemos D1-based irrigation controller, main features are:
+
+- support for 4 water lines through bistable 9V valves
+- support for one water flow sensor to monitor and measure water consumption
+- MQTT used for configuration and monitoring purposes. You will need to set up a MQTT broker (ie. mosquitto)
+- Water lines configuration is persistently stored to the Wemos D1 EEPROM and is kept across restarts
+- OTA updates are supported
 
 ## Sketch
 
