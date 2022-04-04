@@ -21,11 +21,6 @@
  * 
  * MQTT commands to topic esp-garden/control
  * 
- * R = Reset Wemos
- * S n s = Set water line 'n' (0-3) to status 's' (0 or 1)
- * P n s hh mm dd = Program water line to be enabled or disabled (s=[1|0]) 'n' to start at 'hh' hours, 'mm' minutes for 'dd' minutes - all zeroes disables the line
- * D = Dumps current configuration
- * 
  */
 
 #include <EEPROM.h>
