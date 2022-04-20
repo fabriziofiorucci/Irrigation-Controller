@@ -55,6 +55,9 @@ da
 // DON'T CHANGE ANYTHING HERE BELOW
 
 const int   WATER_LINES = 4;
+const int   LINE_TOGGLE_DELAY = 250;
+
+boolean isDumpConfigRequest = false;
 
 // NTP and RTC
 WiFiUDP ntpUDP;
@@ -269,7 +272,7 @@ void lineToggle(int waterLine,int waterStatus) {
   dumpDebug(mkDebugMessage("done","Line "+String(waterLine)+" set to "+String(waterStatus)+" relay "+relayToToggle));
 
   pcf8574.digitalWrite(waterLine*2+waterStatus,0);
-  delay(200);
+  delay(LINE_TOGGLE_DELAY);
   pcf8574.digitalWrite(waterLine*2+waterStatus,1);
 
   if (waterStatus == 0) {
@@ -298,7 +301,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
   String command=String(jsonCommand["command"]);
 
   if (command == "dump") {
-    dumpConfig();
+    isDumpConfigRequest = true;
   } else if (command == "restart") {
     dumpDebug(mkDebugMessage("done","Restarting"));
     delay(1000);
@@ -505,6 +508,11 @@ void loop() {
   }
 
   mqttClient.loop();
+
+  if (isDumpConfigRequest==true) {
+    dumpConfig();
+    isDumpConfigRequest=false;
+  }
 
   long now = millis();
   if (now - lastMsg > pollInterval) {
