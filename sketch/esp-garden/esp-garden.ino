@@ -4,6 +4,8 @@
  * RTClib by Adafruit
  * PCF8574 library by Renzo Mischianti - https://www.mischianti.org/2019/01/02/pcf8574_1-i2c-digital-i-o-expander-fast-easy-usage/
  * ArduinoJSON by Benoît Blanchon - https://arduinojson.org/
+ * PubSubClient by Nick O'Leary
+ * NTPClient
  * 
  * D1 = i2c SCL
  * D2 = i2c SDA
